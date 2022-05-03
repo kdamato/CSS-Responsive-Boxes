@@ -1,86 +1,97 @@
 body {
-  background: blanchedalmond;
-  margin: 0;
+  background: papayawhip;
 }
 
-.container .a, .b, .f{
+/* * {
+  border: 1px solid teal;
+  box-sizing: border-box;
+} */
+
+header {
+  background: red;
+}
+
+main {
+  background: orange;
+}
+
+.c {
+  background: yellow;
+}
+
+.d {
+  background: green;
+}
+
+.e {
+  background: blue;
+}
+
+footer {
+  background: purple;
+}
+
+.container {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
   justify-content: space-between;
-  margin: 1em;
 }
 
-.container .a {
-  flex-grow: 1;
-  background: red;
-  margin: 1em;
-  min-height: 13.5vh;
-}
-
-.b {
-  flex-grow: 2;
-  background: blue;
-  width: 90%;
-  min-height: 50vh;
-}
-
-
-
-.f{
-  flex-grow: 1;
-  background: orange;
-  width: 90%;
-  min-height: 13.5vh;
-}
-
-.container .c, .d, .e{
-  display: inline-flex;
-  min-height: 100vh;
-  flex-direction: row;
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  flex-grow: 3;
   justify-content: space-between;
+  align-items: center;
+  min-height: 70vh;
+}
+
+header, footer, aside, .wrapper  {
+  flex-grow: 1;
+  margin: .5em;
+  max-height: 10vh;
+}
+
+aside  {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  min-height: 20vh;
+
+}
+
+aside > div {
+  flex-grow: 10;
+  margin: .5em;
+  /* min-width: 20vh; */
+}
+
+main {
+  width: 90%;
+  flex-grow: 3;
   margin: .5em;
 }
 
-.container .c {
-  flex-grow: 1;
-  background: green;
-  width: 25%;
-  min-height: 10vh;
-  margin-left: 1em;
-  margin-top: .5em;
-  margin-right: .5em;
-  margin-bottom: .5em;
-}
 
-.d {
-  flex-grow: 1;
-  background: purple; 
-  width: 25%;
-  min-height: 10vh;
-}
-
-.e{
-  flex-grow: 1;
-  background: yellow;
-  width: 25%;
-  min-height: 10vh;
-}
-@media(min-width: 600px) {
+@media (min-width: 600px) {
   .container {
     flex-direction: row;
     flex-wrap: wrap;
   }
-
-.a {
-  width: 100%;
-}
-
-.b{
-  width: 75%;
-}
-
-.a, .b, .c {
-  margin: 1em;
-}
+  header {
+    width: 100%;
+    max-height: 10vh;
+  }
+  .wrapper {
+    justify-content: stretch;
+    flex-basis: 70%;
+      min-height:  80vh;
+  }
+  footer {
+    margin: .5em;
+    flex-grow: 3;
+    min-height:  80vh;
+  }
 }
